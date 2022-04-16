@@ -1,0 +1,7 @@
+# HTTP server configuration
+
+[http]
+
+server_address = ":8080"
+read_timeout = "60s"
+write_timeout = "60s"
