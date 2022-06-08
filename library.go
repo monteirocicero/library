@@ -13,7 +13,7 @@ func main() {
 	log.Println("Initializing configuration")
 	err := config.InitConfig("library", nil)
 	if err != nil {
-		log.Fatal("Failed to read configuration: %v\n", err)
+		log.Fatalf("Failed to read configuration: %v\n", err)
 	}
 
 	var wg sync.WaitGroup
@@ -24,7 +24,7 @@ func main() {
 		log.Println("Starting HTTP Server")
 		err := server.StartHTTPServer()
 		if err != nil {
-			log.Fatal("Could not start HTTP Server: %v\n", err)
+			log.Fatalf("Could not start HTTP Server: %v\n", err)
 		}
 		log.Println("HTTP Server gracefully terminated")
 	}()

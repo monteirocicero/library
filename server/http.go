@@ -19,7 +19,7 @@ func startHTTPServer() (err error) {
 	mux.Handle("/api/", newHandlerAPI())
 
 	server := http.Server{}
-	server.ReadHeaderTimeout = config.GetHTTPReadTimeout()
+	server.ReadTimeout = config.GetHTTPReadTimeout()
 	server.WriteTimeout = config.GetHTTPWriteTimeout()
 	server.Addr = config.GetHTTPServerAddress()
 	server.Handler = mux
